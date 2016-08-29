@@ -28,6 +28,6 @@ public class UserResource {
 
     @RequestMapping(value = "/removeLastSuggestion/{id}", method = RequestMethod.DELETE)
     public void removeLastSuggestion() {
-//        userService.removeLastSuggestion();
+        userService.removeLastSuggestion();
     }
 }
