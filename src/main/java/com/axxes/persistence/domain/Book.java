@@ -1,17 +1,37 @@
 package com.axxes.persistence.domain;
 
+import org.hibernate.loader.plan.spi.Fetch;
+
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by Alex on 26/08/16.
  */
+@Entity
+@Table(name = "book")
+@NamedQueries({
+        @NamedQuery(
+                name = "test",
+                query = "SELECT b FROM Book b"
+        )}
+)
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column
     private String title;
+    @Column
     private String isbn;
+    @Column
     private int year;
+    @Column
     private String author;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "book_id")
     private List<Tag> tags;
 
     public long getId() {

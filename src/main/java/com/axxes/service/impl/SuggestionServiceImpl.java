@@ -1,6 +1,8 @@
 package com.axxes.service.impl;
 
+import com.axxes.persistence.dao.SuggestionDao;
 import com.axxes.service.SuggestionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,4 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SuggestionServiceImpl implements SuggestionService {
+
+    @Autowired
+    private SuggestionDao suggestionDao;
 }

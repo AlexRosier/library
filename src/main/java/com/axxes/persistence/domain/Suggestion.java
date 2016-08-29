@@ -1,14 +1,25 @@
 package com.axxes.persistence.domain;
 
+import javax.persistence.*;
+
 /**
  * Created by Alex on 26/08/16.
  */
+@Entity
+@Table
 public class Suggestion {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+    @Column
     private String url;
+    @Column
     private String motivation;
+    @Column
     private String isbn;
 
     public long getId() {

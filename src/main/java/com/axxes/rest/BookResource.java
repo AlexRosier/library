@@ -1,5 +1,6 @@
 package com.axxes.rest;
 
+import com.axxes.persistence.domain.Book;
 import com.axxes.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ public class BookResource {
     private BookService bookService;
 
     @RequestMapping(value = "/authors", method = RequestMethod.GET)
-    public List<String> getAllAuthors() {
+    public List<Book> getAllAuthors() {
         return bookService.getAllAuthors();
     }
 

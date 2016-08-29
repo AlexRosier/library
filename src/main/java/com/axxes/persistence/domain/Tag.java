@@ -1,11 +1,18 @@
 package com.axxes.persistence.domain;
 
+import javax.persistence.*;
+
 /**
  * Created by Alex on 26/08/16.
  */
+@Entity
+@Table(name = "tag")
 public class Tag {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column
     private String value;
 
     public long getId() {

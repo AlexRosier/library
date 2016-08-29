@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserService {
     List<User> getUsersWithSuggestion();
 
-    void removeLastSuggestion();
+    void removeLastSuggestion() throws ClassNotFoundException;
 }
