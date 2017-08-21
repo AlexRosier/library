@@ -30,6 +30,13 @@ public class BookResource {
         bookService.updateBookName(id, name);
     }
 
+    @RequestMapping(value = "/updateBookName/{id}", method = RequestMethod.PUT)
+    public void updateBookTitle(@PathVariable long id,
+                               @RequestParam(value="title") String title) {
+        bookService.updateBookTitle(id, title);
+    }
+
+
     @RequestMapping(value = "/count", method = RequestMethod.GET)
     public Integer getNumberOfBooks() {
         return bookService.getNumberOfBooks();

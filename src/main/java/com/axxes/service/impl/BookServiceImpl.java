@@ -19,15 +19,21 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getAllAuthors() {
-        return null;
+        return bookDao.getAllAuthors();
     }
 
     @Override
     public void updateBookName(long id, String name) {
+        bookDao.updateBookName(id, name);
     }
 
     @Override
     public Integer getNumberOfBooks() {
-        return null;
+        return bookDao.getNumberOfBooks();
+    }
+
+    @Override
+    public void updateBookTitle(long id, String title) {
+        bookDao.updateBookTitle(id, title);
     }
 }
