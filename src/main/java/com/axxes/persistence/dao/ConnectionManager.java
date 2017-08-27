@@ -10,17 +10,18 @@ import java.sql.SQLException;
 @Component
 public final class ConnectionManager
 {
-    @Value("{$db.user}")
+    @Value("${db.user}")
     private String user;
 
-    @Value("{$db.password}")
+    @Value("${db.password}")
     private String password = "root";
 
-    @Value("{$driver.class.name}")
+    @Value("${db.url}")
     private String url;
 
     public Connection openConnection() {
         try {
+            Class.forName("org.postgresql.Driver");
             return DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
             System.out.println(e);
