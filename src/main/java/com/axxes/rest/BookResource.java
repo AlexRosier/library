@@ -17,7 +17,7 @@ public class BookResource {
     private BookService bookService;
 
     @RequestMapping(value = "/authors", method = RequestMethod.GET)
-    public List<Book> getAllAuthors() {
+    public List<String > getAllAuthors() {
         return bookService.getAllAuthors();
     }
 

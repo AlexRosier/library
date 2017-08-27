@@ -27,6 +27,7 @@ public class PersistenceConfig {
     @Value("${db.password}")
     private String password;
 
+    @Bean
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource(url, user, password);
         dataSource.setDriverClassName(driverClassName);
