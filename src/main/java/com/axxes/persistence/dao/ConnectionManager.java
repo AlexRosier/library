@@ -19,13 +19,27 @@ public final class ConnectionManager
     @Value("${db.url}")
     private String url;
 
+    private Connection connection;
+
     public Connection openConnection() {
         try {
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(url, user, password);
+            return connection;
         } catch (Exception e) {
             System.out.println(e);
         }
         return null;
+    }
+
+    public void closeConnection() {
+        try {
+            if(!connection.isClosed()) {
+                connection.close();
+                connection = null;
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
