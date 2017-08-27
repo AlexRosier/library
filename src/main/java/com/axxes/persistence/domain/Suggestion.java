@@ -19,6 +19,17 @@ public class Suggestion {
     @Column
     private String isbn;
 
+    public Suggestion(long id, LibraryUser libraryUser, String url, String motivation, String isbn) {
+        this.id = id;
+        this.libraryUser = libraryUser;
+        this.url = url;
+        this.motivation = motivation;
+        this.isbn = isbn;
+    }
+
+    public Suggestion() {
+    }
+
     public long getId() {
         return id;
     }
@@ -59,10 +70,42 @@ public class Suggestion {
         this.isbn = isbn;
     }
 
-    public Suggestion(LibraryUser libraryUser, String url, String motivation, String isbn) {
-        this.libraryUser = libraryUser;
-        this.url = url;
-        this.motivation = motivation;
-        this.isbn = isbn;
+    public static class Builder {
+
+        private long id;
+        private LibraryUser libraryUser;
+        private String url;
+        private String motivation;
+        private String isbn;
+
+        public Builder setId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setLibraryUser(LibraryUser libraryUser) {
+            this.libraryUser = libraryUser;
+            return this;
+        }
+
+        public Builder setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public Builder setMotivation(String motivation) {
+            this.motivation = motivation;
+            return this;
+        }
+
+        public Builder setIsbn(String isbn) {
+            this.isbn = isbn;
+            return this;
+        }
+
+
+        public Suggestion build() {
+            return new Suggestion(id, libraryUser, url, motivation, isbn);
+        }
     }
 }
