@@ -97,7 +97,7 @@ public class Book {
         private String isbn;
         private int year;
         private String author;
-        private List<Tag> tags = Lists.newArrayList().
+        private List<Tag> tags = Lists.newArrayList();
 
         public Builder setId(long id) {
             this.id = id;
