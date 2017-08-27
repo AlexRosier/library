@@ -1,65 +1,61 @@
 package com.axxes.service.impl;
 
 import com.axxes.persistence.dao.SuggestionDao;
-import com.axxes.persistence.dao.UserDao;
+import com.axxes.persistence.dao.LibraryUserDao;
 import com.axxes.persistence.domain.Suggestion;
-import com.axxes.persistence.domain.User;
-import com.axxes.rest.SuggestionResource;
+import com.axxes.persistence.domain.LibraryUser;
 import com.axxes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Component
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    private LibraryUserDao libraryUserDao;
 
     @Autowired
     private SuggestionDao suggestionDao;
 
     @Override
-    public List<User> getUsersWithSuggestion() {
-        return userDao.getUsersWithSuggestion();
+    public List<LibraryUser> getUsersWithSuggestion() {
+        return libraryUserDao.getUsersWithSuggestion();
     }
 
     @Override
     public void removeLastSuggestion(long userId) {
-        userDao.removeLastSuggestion(userId);
+        libraryUserDao.removeLastSuggestion(userId);
     }
 
     @Override
-    public void createUser(User user) {
-        userDao.createUser(user);
+    public void createUser(LibraryUser libraryUser) {
+        libraryUserDao.createUser(libraryUser);
     }
 
     @Override
-    public User findUserWithFirstName(String firstName) {
-        return userDao.findUserWithFirstName(firstName);
+    public LibraryUser findUserWithFirstName(String firstName) {
+        return libraryUserDao.findUserWithFirstName(firstName);
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userDao.getAllUsers();
+    public List<LibraryUser> getAllUsers() {
+        return libraryUserDao.getAllUsers();
     }
 
     @Override
-    public User updateUserLastName(long id, String lastName) {
-        return userDao.updateUserLastName(id, lastName);
+    public LibraryUser updateUserLastName(long id, String lastName) {
+        return libraryUserDao.updateUserLastName(id, lastName);
     }
 
     @Override
-    public void createUserWithSuggestion(User user, Suggestion suggestion) {
+    public void createUserWithSuggestion(LibraryUser libraryUser, Suggestion suggestion) {
 
     }
 
     @Override
     public void removeUser(long id) {
-        userDao.removeUser(id);
+        libraryUserDao.removeUser(id);
     }
 }

@@ -1,18 +1,13 @@
 package com.axxes.rest;
 
 import com.axxes.persistence.domain.Suggestion;
-import com.axxes.persistence.domain.User;
 import com.axxes.service.SuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Column;
 import java.util.List;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Component
 @RestController
 @RequestMapping("/suggestion")

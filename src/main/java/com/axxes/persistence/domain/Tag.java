@@ -2,9 +2,6 @@ package com.axxes.persistence.domain;
 
 import javax.persistence.*;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Entity
 @Table(name = "tag")
 public class Tag {

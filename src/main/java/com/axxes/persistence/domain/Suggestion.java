@@ -2,9 +2,6 @@ package com.axxes.persistence.domain;
 
 import javax.persistence.*;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Entity
 @Table
 public class Suggestion {
@@ -13,8 +10,8 @@ public class Suggestion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "libraryuser_id")
+    private LibraryUser libraryUser;
     @Column
     private String url;
     @Column
@@ -30,12 +27,12 @@ public class Suggestion {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public LibraryUser getLibraryUser() {
+        return libraryUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setLibraryUser(LibraryUser libraryUser) {
+        this.libraryUser = libraryUser;
     }
 
     public String getUrl() {

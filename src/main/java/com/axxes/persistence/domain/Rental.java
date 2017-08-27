@@ -3,9 +3,6 @@ package com.axxes.persistence.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Entity
 public class Rental {
 
@@ -15,7 +12,8 @@ public class Rental {
     @OneToOne
     private Book book;
     @OneToOne
-    private User user;
+    @JoinColumn(name = "libraryuser_id")
+    private LibraryUser libraryUser;
     @Column(name = "pickup_date")
     private Date pickupDate;
     @Column(name = "return_date")
@@ -37,12 +35,12 @@ public class Rental {
         this.book = book;
     }
 
-    public User getUser() {
-        return user;
+    public LibraryUser getLibraryUser() {
+        return libraryUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setLibraryUser(LibraryUser libraryUser) {
+        this.libraryUser = libraryUser;
     }
 
     public Date getPickupDate() {

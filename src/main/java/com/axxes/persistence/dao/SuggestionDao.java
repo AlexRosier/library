@@ -5,9 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created by Alex on 29/08/16.
- */
 @Component
 public class SuggestionDao {
 

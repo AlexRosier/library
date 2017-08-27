@@ -5,14 +5,11 @@ import org.hibernate.loader.plan.spi.Fetch;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Entity
 @Table(name = "book")
 @NamedQueries({
         @NamedQuery(
-                name = "test",
+                name = "named",
                 query = "SELECT b FROM Book b"
         )}
 )

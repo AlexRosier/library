@@ -11,9 +11,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.Properties;
 
-/**
- * Created by Alex on 29/08/16.
- */
 @Configuration
 public class PersistenceConfig {
 

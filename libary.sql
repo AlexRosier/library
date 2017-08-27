@@ -6,7 +6,7 @@ CREATE TABLE library.book (
 	author varchar(100),
 	CONSTRAINT book_pk PRIMARY KEY (id));
 
-CREATE TABLE library.user (
+CREATE TABLE library.libraryuser (
 	id BIGSERIAL NOT NULL,
 	username varchar(50) NOT NULL,
 	firstname varchar(50) NOT NULL,
@@ -17,21 +17,21 @@ CREATE TABLE library.user (
 CREATE TABLE library.rental (
 	id BIGSERIAL NOT NULL,
 	book_id BIGINT NOT NULL,
-	user_id BIGINT NOT NULL,
+	libraryuser_id BIGINT NOT NULL,
 	pickup_date timestamp(6) NOT NULL,
 	return_date timestamp(6),
 	CONSTRAINT rental_pk PRIMARY KEY (id),
 	CONSTRAINT rental_book_fk1 FOREIGN KEY (book_id) REFERENCES library.book (id),
-	CONSTRAINT rental_user_fk1 FOREIGN KEY (user_id) REFERENCES library.user (id));
+	CONSTRAINT rental_libraryuser_fk1 FOREIGN KEY (libraryuser_id) REFERENCES library.libraryuser (id));
 
 CREATE TABLE library.suggestion (
 	id BIGSERIAL NOT NULL,
-	user_id BIGINT NOT NULL,
+	libraryuser_id BIGINT NOT NULL,
 	url varchar(200),
 	motivation TEXT,
 	isbn varchar(20),
 	CONSTRAINT suggestion_pk PRIMARY KEY (id),
-	CONSTRAINT suggestion_user_fk1 FOREIGN KEY (user_id) REFERENCES library.user (id));
+	CONSTRAINT suggestion_libraryuser_fk1 FOREIGN KEY (libraryuser_id) REFERENCES library.libraryuser (id));
 
 CREATE TABLE library.tag (
 	id BIGSERIAL NOT NULL,

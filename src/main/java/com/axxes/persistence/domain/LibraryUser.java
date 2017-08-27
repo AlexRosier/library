@@ -2,12 +2,10 @@ package com.axxes.persistence.domain;
 
 import javax.persistence.*;
 
-/**
- * Created by Alex on 26/08/16.
- */
+
 @Entity
-@Table(name = "\"user\"")
-public class User {
+@Table(name = "libraryuser")
+public class LibraryUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by Alex on 26/08/16.
- */
 @Component
 @RestController
 @RequestMapping("/book")
