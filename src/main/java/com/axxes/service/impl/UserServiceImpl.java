@@ -43,12 +43,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<LibraryUser> getAllUsers() {
-        try {
-            return libraryUserDao.getAllUsers();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return Lists.newArrayListWithCapacity(0);
+        return libraryUserDao.getAllUsers();
     }
 
     @Override
