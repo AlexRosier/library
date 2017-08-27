@@ -19,6 +19,17 @@ public class Rental {
     @Column(name = "return_date")
     private Date returnDate;
 
+    public Rental(long id, Book book, LibraryUser libraryUser, Date pickupDate, Date returnDate) {
+        this.id = id;
+        this.book = book;
+        this.libraryUser = libraryUser;
+        this.pickupDate = pickupDate;
+        this.returnDate = returnDate;
+    }
+
+    public Rental() {
+    }
+
     public long getId() {
         return id;
     }
@@ -57,5 +68,42 @@ public class Rental {
 
     public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public static class Builder {
+        private long id;
+        private Book book;
+        private LibraryUser libraryUser;
+        private Date pickupDate;
+        private Date returnDate;
+
+        public Builder setId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setLibraryUser(LibraryUser libraryUser) {
+            this.libraryUser = libraryUser;
+            return this;
+        }
+
+        public Builder setPickupDate(Date pickupDate) {
+            this.pickupDate = pickupDate;
+            return this;
+        }
+
+        public Builder setReturnDate(Date returnDate) {
+            this.returnDate = returnDate;
+            return this;
+        }
+
+        public Builder setBook(Book book) {
+            this.book = book;
+            return this;
+        }
+
+        public Rental build() {
+            return new Rental(id, book, libraryUser, pickupDate, returnDate);
+        }
     }
 }

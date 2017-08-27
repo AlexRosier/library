@@ -58,4 +58,11 @@ public class Suggestion {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+    public Suggestion(LibraryUser libraryUser, String url, String motivation, String isbn) {
+        this.libraryUser = libraryUser;
+        this.url = url;
+        this.motivation = motivation;
+        this.isbn = isbn;
+    }
 }
