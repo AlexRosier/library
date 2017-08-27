@@ -2,7 +2,7 @@ INSERT into library.book (title, isbn, year, author) VALUES
     ('Spring Data', '1234567890123', 2015, 'John Guru'),
     ('Spring REST', '3210987654321', 2014, 'Smith Jones');
 
-INSERT into library.user (username, firstname, lastname, email) VALUES
+INSERT into library.libraryuser (username, firstname, lastname, email) VALUES
 	('JohnSmith12', 'John', 'Smith', 'john@smith.com'),
 	('DavySmith32', 'Davy', 'Smith', 'davy@smith.com'),
 	('EricNorth57', 'Eric', 'North', 'eric@north.com');

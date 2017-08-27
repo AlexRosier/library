@@ -1,7 +1,7 @@
 package com.axxes.rest;
 
-import com.axxes.persistence.domain.Suggestion;
 import com.axxes.persistence.domain.LibraryUser;
+import com.axxes.persistence.domain.Suggestion;
 import com.axxes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

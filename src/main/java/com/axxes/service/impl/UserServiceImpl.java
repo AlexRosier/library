@@ -5,9 +5,11 @@ import com.axxes.persistence.dao.LibraryUserDao;
 import com.axxes.persistence.domain.Suggestion;
 import com.axxes.persistence.domain.LibraryUser;
 import com.axxes.service.UserService;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Component
@@ -41,7 +43,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<LibraryUser> getAllUsers() {
-        return libraryUserDao.getAllUsers();
+        try {
+            return libraryUserDao.getAllUsers();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Lists.newArrayListWithCapacity(0);
     }
 
     @Override
