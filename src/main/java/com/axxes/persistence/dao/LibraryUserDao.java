@@ -3,8 +3,11 @@ package com.axxes.persistence.dao;
 import com.axxes.persistence.domain.LibraryUser;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +20,9 @@ public class LibraryUserDao {
     @Autowired
     private ConnectionManager connectionManager;
 
+    @Autowired
+    private EntityManager entityManager;
+
     public List<LibraryUser> getUsersWithSuggestion() {
         return null;
     }
@@ -25,8 +31,9 @@ public class LibraryUserDao {
 
     }
 
+    @Transactional
     public void createUser(LibraryUser libraryUser) {
-
+        entityManager.persist(libraryUser);
     }
 
     public LibraryUser findUserWithFirstName(String firstName) {
