@@ -1,6 +1,6 @@
 package com.axxes.rest;
 
-import com.axxes.persistence.domain.LibraryUser;
+import com.axxes.persistence.domain.LibaryUser;
 import com.axxes.persistence.domain.Suggestion;
 import com.axxes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +18,12 @@ public class UserResource {
     private UserService userService;
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
-    public List<LibraryUser> getAllUsers() {
+    public List<LibaryUser> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @RequestMapping(value = "/madeSuggestion", method = RequestMethod.GET)
-    public List<LibraryUser> getUsersWithSuggestion() {
+    public List<LibaryUser> getUsersWithSuggestion() {
         return userService.getUsersWithSuggestion();
     }
 
@@ -37,7 +37,7 @@ public class UserResource {
                            @RequestParam(value="firstName") String firstName,
                            @RequestParam(value="lastName") String lastName,
                            @RequestParam(value="email") String email) {
-        LibraryUser libraryUser = new LibraryUser();
+        LibaryUser libraryUser = new LibaryUser();
         libraryUser.setFirstName(firstName);
         libraryUser.setLastName(lastName);
         libraryUser.setEmail(email);
@@ -50,7 +50,7 @@ public class UserResource {
                            @RequestParam(value="firstName") String firstName,
                            @RequestParam(value="lastName") String lastName,
                            @RequestParam(value="email") String email) {
-        LibraryUser libraryUser = new LibraryUser();
+        LibaryUser libraryUser = new LibaryUser();
         libraryUser.setFirstName(firstName);
         libraryUser.setLastName(lastName);
         libraryUser.setEmail(email);
@@ -63,13 +63,13 @@ public class UserResource {
     }
 
     @RequestMapping(value = "/searchUser/{firstName}", method = RequestMethod.GET)
-    public LibraryUser findUserWithFirstName(@PathVariable String firstName) {
+    public LibaryUser findUserWithFirstName(@PathVariable String firstName) {
         return userService.findUserWithFirstName(firstName);
     }
 
     @RequestMapping(value = "/updateUserLastName/{id}", method = RequestMethod.PUT)
-    public LibraryUser updateUserLastName(@PathVariable long id,
-                                          @RequestParam(value="lastName") String lastName) {
+    public LibaryUser updateUserLastName(@PathVariable long id,
+                                         @RequestParam(value="lastName") String lastName) {
         return userService.updateUserLastName(id, lastName);
     }
 

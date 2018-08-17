@@ -3,13 +3,11 @@ package com.axxes.service.impl;
 import com.axxes.persistence.dao.SuggestionDao;
 import com.axxes.persistence.dao.LibraryUserDao;
 import com.axxes.persistence.domain.Suggestion;
-import com.axxes.persistence.domain.LibraryUser;
+import com.axxes.persistence.domain.LibaryUser;
 import com.axxes.service.UserService;
-import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Component
@@ -22,7 +20,7 @@ public class UserServiceImpl implements UserService {
     private SuggestionDao suggestionDao;
 
     @Override
-    public List<LibraryUser> getUsersWithSuggestion() {
+    public List<LibaryUser> getUsersWithSuggestion() {
         return libraryUserDao.getUsersWithSuggestion();
     }
 
@@ -32,27 +30,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUser(LibraryUser libraryUser) {
+    public void createUser(LibaryUser libraryUser) {
         libraryUserDao.createUser(libraryUser);
     }
 
     @Override
-    public LibraryUser findUserWithFirstName(String firstName) {
+    public LibaryUser findUserWithFirstName(String firstName) {
         return libraryUserDao.findUserWithFirstName(firstName);
     }
 
     @Override
-    public List<LibraryUser> getAllUsers() {
+    public List<LibaryUser> getAllUsers() {
         return libraryUserDao.getAllUsers();
     }
 
     @Override
-    public LibraryUser updateUserLastName(long id, String lastName) {
+    public LibaryUser updateUserLastName(long id, String lastName) {
         return libraryUserDao.updateUserLastName(id, lastName);
     }
 
     @Override
-    public void createUserWithSuggestion(LibraryUser libraryUser, Suggestion suggestion) {
+    public void createUserWithSuggestion(LibaryUser libraryUser, Suggestion suggestion) {
 
     }
 

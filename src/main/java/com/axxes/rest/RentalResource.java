@@ -26,13 +26,13 @@ public class RentalResource {
         return rentalService.getRentalHistoryOfBook(name);
     }
 
-    @RequestMapping(value = "/create/{bookId}/user{userId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/create/{bookId}/user/{userId}", method = RequestMethod.POST)
     public void createRental(@PathVariable long bookId,
                            @PathVariable long userId) {
         rentalService.createRental(bookId, userId);
     }
 
-    @RequestMapping(value = "/return/{rentalId}/user{userId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/return/{rentalId}/user/{userId}", method = RequestMethod.POST)
     public void returnRental(@PathVariable long rentalId) {
         rentalService.returnRental(rentalId);
     }

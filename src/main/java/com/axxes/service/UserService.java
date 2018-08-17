@@ -1,24 +1,24 @@
 package com.axxes.service;
 
 import com.axxes.persistence.domain.Suggestion;
-import com.axxes.persistence.domain.LibraryUser;
+import com.axxes.persistence.domain.LibaryUser;
 
 import java.util.List;
 
 public interface UserService {
-    List<LibraryUser> getUsersWithSuggestion();
+    List<LibaryUser> getUsersWithSuggestion();
 
     void removeLastSuggestion(long userId);
 
-    void createUser(LibraryUser libraryUser);
+    void createUser(LibaryUser libraryUser);
 
-    LibraryUser findUserWithFirstName(String firstName);
+    LibaryUser findUserWithFirstName(String firstName);
 
-    List<LibraryUser> getAllUsers();
+    List<LibaryUser> getAllUsers();
 
-    LibraryUser updateUserLastName(long id, String lastName);
+    LibaryUser updateUserLastName(long id, String lastName);
 
-    void createUserWithSuggestion(LibraryUser libraryUser, Suggestion suggestion);
+    void createUserWithSuggestion(LibaryUser libraryUser, Suggestion suggestion);
 
     void removeUser(long id);
 }

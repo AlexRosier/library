@@ -1,6 +1,6 @@
 package com.axxes.persistence.dao;
 
-import com.axxes.persistence.domain.LibraryUser;
+import com.axxes.persistence.domain.LibaryUser;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class LibraryUserDao {
 
-    public List<LibraryUser> getUsersWithSuggestion() {
+    public List<LibaryUser> getUsersWithSuggestion() {
         return null;
     }
 
@@ -16,19 +16,19 @@ public class LibraryUserDao {
 
     }
 
-    public void createUser(LibraryUser libraryUser) {
+    public void createUser(LibaryUser libraryUser) {
 
     }
 
-    public LibraryUser findUserWithFirstName(String firstName) {
+    public LibaryUser findUserWithFirstName(String firstName) {
         return null;
     }
 
-    public List<LibraryUser> getAllUsers() {
+    public List<LibaryUser> getAllUsers() {
         return null;
     }
 
-    public LibraryUser updateUserLastName(long id, String lastName) {
+    public LibaryUser updateUserLastName(long id, String lastName) {
         return null;
     }
 

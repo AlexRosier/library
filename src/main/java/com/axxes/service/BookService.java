@@ -5,6 +5,9 @@ import com.axxes.persistence.domain.Book;
 import java.util.List;
 
 public interface BookService {
+
+    Iterable<Book> findAll();
+
     List<Book> getAllAuthors();
 
     void updateBookName(long id, String name);

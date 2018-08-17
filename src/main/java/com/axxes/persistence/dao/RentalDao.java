@@ -21,7 +21,6 @@ public class RentalDao {
 
     }
 
-
     public void returnRental(long rentalId, Instant now) {
 
     }

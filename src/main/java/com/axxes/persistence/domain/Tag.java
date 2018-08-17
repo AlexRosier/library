@@ -12,6 +12,9 @@ public class Tag {
     @Column
     private String value;
 
+    @ManyToOne
+    private Book book;
+
     public Tag(long id, String value) {
         this.id = id;
         this.value = value;

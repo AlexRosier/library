@@ -13,16 +13,16 @@ public class Rental {
     private Book book;
     @OneToOne
     @JoinColumn(name = "libraryuser_id")
-    private LibraryUser libraryUser;
+    private LibaryUser user;
     @Column(name = "pickup_date")
     private Date pickupDate;
     @Column(name = "return_date")
     private Date returnDate;
 
-    public Rental(long id, Book book, LibraryUser libraryUser, Date pickupDate, Date returnDate) {
+    public Rental(long id, Book book, LibaryUser user, Date pickupDate, Date returnDate) {
         this.id = id;
         this.book = book;
-        this.libraryUser = libraryUser;
+        this.user = user;
         this.pickupDate = pickupDate;
         this.returnDate = returnDate;
     }
@@ -46,12 +46,12 @@ public class Rental {
         this.book = book;
     }
 
-    public LibraryUser getLibraryUser() {
-        return libraryUser;
+    public LibaryUser getUser() {
+        return user;
     }
 
-    public void setLibraryUser(LibraryUser libraryUser) {
-        this.libraryUser = libraryUser;
+    public void setUser(LibaryUser user) {
+        this.user = user;
     }
 
     public Date getPickupDate() {
@@ -73,7 +73,7 @@ public class Rental {
     public static class Builder {
         private long id;
         private Book book;
-        private LibraryUser libraryUser;
+        private LibaryUser libraryUser;
         private Date pickupDate;
         private Date returnDate;
 
@@ -82,7 +82,7 @@ public class Rental {
             return this;
         }
 
-        public Builder setLibraryUser(LibraryUser libraryUser) {
+        public Builder setLibraryUser(LibaryUser libraryUser) {
             this.libraryUser = libraryUser;
             return this;
         }

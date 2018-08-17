@@ -11,7 +11,7 @@ public class Suggestion {
     private long id;
     @ManyToOne
     @JoinColumn(name = "libraryuser_id")
-    private LibraryUser libraryUser;
+    private LibaryUser libraryUser;
     @Column
     private String url;
     @Column
@@ -19,7 +19,7 @@ public class Suggestion {
     @Column
     private String isbn;
 
-    public Suggestion(long id, LibraryUser libraryUser, String url, String motivation, String isbn) {
+    public Suggestion(long id, LibaryUser libraryUser, String url, String motivation, String isbn) {
         this.id = id;
         this.libraryUser = libraryUser;
         this.url = url;
@@ -38,11 +38,11 @@ public class Suggestion {
         this.id = id;
     }
 
-    public LibraryUser getLibraryUser() {
+    public LibaryUser getLibraryUser() {
         return libraryUser;
     }
 
-    public void setLibraryUser(LibraryUser libraryUser) {
+    public void setLibraryUser(LibaryUser libraryUser) {
         this.libraryUser = libraryUser;
     }
 
@@ -73,7 +73,7 @@ public class Suggestion {
     public static class Builder {
 
         private long id;
-        private LibraryUser libraryUser;
+        private LibaryUser libraryUser;
         private String url;
         private String motivation;
         private String isbn;
@@ -83,7 +83,7 @@ public class Suggestion {
             return this;
         }
 
-        public Builder setLibraryUser(LibraryUser libraryUser) {
+        public Builder setLibraryUser(LibaryUser libraryUser) {
             this.libraryUser = libraryUser;
             return this;
         }

@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "libraryuser")
-public class LibraryUser {
+@Table(name = "libuser")
+public class LibaryUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class LibraryUser {
     @Column
     private String email;
 
-    public LibraryUser(long id, String userName, String firstName, String lastName, String email) {
+    public LibaryUser(long id, String userName, String firstName, String lastName, String email) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
@@ -27,7 +27,7 @@ public class LibraryUser {
         this.email = email;
     }
 
-    public LibraryUser() {
+    public LibaryUser() {
     }
 
     public long getId() {
@@ -102,8 +102,8 @@ public class LibraryUser {
             return this;
         }
 
-        public LibraryUser build() {
-            return new LibraryUser(id, userName, firstName, lastName, email);
+        public LibaryUser build() {
+            return new LibaryUser(id, userName, firstName, lastName, email);
         }
     }
 }
